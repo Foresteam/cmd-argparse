@@ -1,5 +1,3 @@
-const discord = require('discord.js');
-
 function getIDFromMention(mention) {
     return mention.substring(3, mention.length - 1);
 }
@@ -10,6 +8,19 @@ async function getMemberByID(id, guild) {
     return null;
 }
 
+/**
+ * @typedef {Object} CmdArg
+ * @property {String} type
+ * @property {String} name
+ * @property {String} desc
+ */
+/**
+ * @typedef {Object} Command
+ * @property {String[]} aliases
+ * @property {CmdArg[]} args
+ * @property {String} help
+ * @property {function(Object)} execute
+ */
 class Command {
     constructor(aliases, args, help, execute) {
         this.aliases = aliases;
@@ -30,13 +41,26 @@ class Command {
     }
 }
 
+
 class ArgParser {
     constructor(prefix='?', allowSpaceInCommands=true) {
         this.prefix = prefix;
         this.allowSpace = allowSpaceInCommands;
     }
+    /**
+     * @typedef {Object} ParsedResult
+     * @property {Command} cmd
+     * @property {Object} args
+     * @property {String} refwith
+     */
+    /**
+     * 
+     * @param {*} msg 
+     * @param {*} commands 
+     * @returns { ParsedResult }
+     */
     parse(msg, commands) {
-        let text = msg.content;
+        let text = typeof msg == 'string' ? msg : msg.content;
         if (!text.startsWith(this.prefix))
             return false;
 
@@ -104,10 +128,13 @@ class ArgParser {
                         val = arg;
                         break;
                     case 'bool':
-                        val = arg == 'вкл';
+                        val = arg == 'on';
                         break;
                     case 'member':
-                        val = getMemberByID(getIDFromMention(arg), msg.guild);
+                        if (typeof msg == 'string')
+                            val = null;
+                        else
+                            val = getMemberByID(getIDFromMention(arg), msg.guild);
                         break;
                     default:
                         val = arg;
@@ -137,10 +164,13 @@ class ArgParser {
                         case 'string':
                             break;
                         case 'member':
-                            val = getMemberByID(val, msg.guild);
+                            if (typeof msg == 'string')
+                                val = null;
+                            else
+                                val = getMemberByID(val, msg.guild);
                             break;
                         case 'bool':
-                            val = val == 'вкл';
+                            val = val == 'on';
                             break;
                         default:
                             val = null;
