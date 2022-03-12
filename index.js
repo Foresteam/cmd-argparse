@@ -43,9 +43,8 @@ class Command {
 
 
 class ArgParser {
-    constructor(prefix='?', allowSpaceInCommands=true) {
+    constructor(prefix='?') {
         this.prefix = prefix;
-        this.allowSpace = allowSpaceInCommands;
     }
     /**
      * @typedef {Object} ParsedResult
@@ -128,7 +127,7 @@ class ArgParser {
                         val = arg;
                         break;
                     case 'bool':
-                        val = arg == 'on';
+                        val = arg == (args[i].swon || 'on');
                         break;
                     case 'member':
                         if (typeof msg == 'string')
@@ -170,7 +169,7 @@ class ArgParser {
                                 val = getMemberByID(val, msg.guild);
                             break;
                         case 'bool':
-                            val = val == 'on';
+                            val = arg == (args[i].swon || 'on');
                             break;
                         default:
                             val = null;
