@@ -8,7 +8,7 @@ async function getMemberByID(id: string, guild: any) {
 	return null;
 }
 
-interface CmdArg {
+export interface CmdArg {
 	type: string;
 	name: string;
 	desc: string;
@@ -43,7 +43,7 @@ export interface ParsedResult {
 	args: any;
 	refwith: string;
 }
-class ArgParser {
+export class ArgParser {
 	prefix: string;
 	constructor(prefix = '?') {
 		this.prefix = prefix;
@@ -175,5 +175,3 @@ class ArgParser {
 		}
 	}
 }
-
-export default { ArgParser, Command };
