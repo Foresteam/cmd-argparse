@@ -1,10 +1,11 @@
 {
-  "name": "cmd-argparse",
+  "name": "@foresteam/cmd-argparse",
   "version": "1.0.0",
   "description": "Command parser",
-  "main": "index.js",
+  "main": "dist/index.js",
+	"types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+		"prepublish": "tsc"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
     "parser"
   ],
   "author": "Foresteam",
-  "license": "SEE LICENCE IN LICENCE",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/foresteam/cmd-argparse/issues"
   },
