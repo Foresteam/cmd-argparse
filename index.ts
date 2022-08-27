@@ -11,15 +11,19 @@ async function getMemberByID(id: string, guild: any) {
 export interface CmdArg {
 	type: string;
 	name: string;
-	desc: string;
+	desc?: string;
 	swon?: string;
+}
+export interface IExecuteArgs {
+	args: any;
+	refwith: string;
 }
 export class Command {
 	aliases: string[];
 	args: CmdArg[];
 	help: string;
-	execute: (arg: any) => any;
-	constructor(aliases: string[], args: CmdArg[], help: string, execute: (arg: any) => any) {
+	execute: (args: IExecuteArgs) => any;
+	constructor(aliases: Command['aliases'], args: Command['args'], help: Command['help'], execute: Command['execute']) {
 		this.aliases = aliases;
 		this.args = args;
 		this.help = help;
@@ -167,7 +171,7 @@ export class ArgParser {
 					}
 					rargs[args[i].name] = val;
 				}
-			return {cmd, args: rargs, refwith: fa};
+			return { cmd, args: rargs, refwith: fa };
 		}
 		catch (e) {
 			console.log(e);
