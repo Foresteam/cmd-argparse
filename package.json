@@ -8,17 +8,18 @@
 		"prepublish": "tsc"
   },
   "repository": {
-    "type": "git",
+		"type": "git",
     "url": "git+https://github.com/foresteam/cmd-argparse.git"
   },
   "keywords": [
-    "command",
+		"command",
     "parser"
   ],
   "author": "Foresteam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/foresteam/cmd-argparse/issues"
+		"url": "https://github.com/foresteam/cmd-argparse/issues"
   },
-  "homepage": "https://github.com/foresteam/cmd-argparse#readme"
+  "homepage": "https://github.com/foresteam/cmd-argparse#readme",
+	"private": false
 }
