@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/foresteam_cmdargparse/__init__.py
+src/foresteam_cmdargparse.egg-info/PKG-INFO
+src/foresteam_cmdargparse.egg-info/SOURCES.txt
+src/foresteam_cmdargparse.egg-info/dependency_links.txt
+src/foresteam_cmdargparse.egg-info/requires.txt
+src/foresteam_cmdargparse.egg-info/top_level.txt

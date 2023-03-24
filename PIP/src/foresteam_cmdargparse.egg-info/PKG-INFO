@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: foresteam-cmdargparse
+Version: 1.0
+Home-page: https://github.com/Foresteam/cmd-argparse
+Author: Foresteam
+Author-email: heler1141@gmail.com
+License: MIT
+Keywords: command parsing discord
+License-File: LICENSE
