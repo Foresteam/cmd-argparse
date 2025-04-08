@@ -1,25 +1,31 @@
 {
   "name": "@foresteam/cmd-argparse",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Command parser",
   "main": "dist/index.js",
-	"types": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
-		"prepublish": "tsc"
+    "prepublish": "tsc"
   },
   "repository": {
-		"type": "git",
+    "type": "git",
     "url": "git+https://github.com/foresteam/cmd-argparse.git"
   },
   "keywords": [
-		"command",
+    "command",
     "parser"
   ],
   "author": "Foresteam",
   "license": "MIT",
   "bugs": {
-		"url": "https://github.com/foresteam/cmd-argparse/issues"
+    "url": "https://github.com/foresteam/cmd-argparse/issues"
   },
   "homepage": "https://github.com/foresteam/cmd-argparse#readme",
-	"private": false
+  "private": false,
+  "dependencies": {
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "esrun": "^3.2.26"
+  }
 }

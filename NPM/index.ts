@@ -87,7 +87,7 @@ export class ArgParser {
 				cnstrStr = true;
 			ttext = ttext.substring(i + 1);
 		}
-		
+
 		i = 0;
 		let doVArg = false, vArg = [], vArgType = '', vArgName = '';
 		try {
@@ -106,7 +106,7 @@ export class ArgParser {
 					}
 				}
 
-				switch (doVArg ? vArgType : ttype) {
+				switch ((doVArg ? vArgType : ttype)?.split('|')[0]) {
 					case 'int':
 						val = parseInt(arg);
 						break;
@@ -174,7 +174,7 @@ export class ArgParser {
 			return { cmd, args: rargs, refwith: fa };
 		}
 		catch (e) {
-			console.log(e);
+			console.error(e);
 			return;
 		}
 	}
