@@ -1,6 +1,6 @@
 {
   "name": "@foresteam/cmd-argparse",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Command parser",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,10 +22,8 @@
   },
   "homepage": "https://github.com/foresteam/cmd-argparse#readme",
   "private": false,
-  "dependencies": {
-    "typescript": "^5.8.3"
-  },
   "devDependencies": {
-    "esrun": "^3.2.26"
+    "esrun": "^3.2.26",
+    "typescript": "^5.8.3"
   }
 }
