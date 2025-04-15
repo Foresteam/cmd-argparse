@@ -114,10 +114,8 @@ export class ArgParser {
 						val = parseFloat(arg);
 						break;
 					case 'string':
-						if (arg == '%s') {
-							arg = strs[0];
-							strs.splice(0);
-						}
+						if (arg == '%s')
+							arg = strs.splice(0, 1)[0];
 						val = arg;
 						break;
 					case 'bool':
