@@ -9,7 +9,12 @@ async function getMemberByID(id: string, guild: any) {
 }
 
 export interface CmdArg {
-	type: string;
+	type: `${'int' |
+	'float' |
+	'string' |
+	'bool' |
+	'member'
+	}${'' | `|${string}`}`;
 	name: string;
 	desc?: string;
 	swon?: string;
